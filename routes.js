@@ -7,5 +7,8 @@ const router = Router();
 
 router.use('/', productController);
 router.use('/about', aboutController);
+router.use('*', (req, res) => {
+    res.render('404');
+})
 
 module.exports = router;
