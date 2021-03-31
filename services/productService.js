@@ -1,6 +1,6 @@
 const uniqid = require('uniqid');
 const Cube = require('../models/Cube');
-const fs = require('fs');
+const fs = require('fs/promises');
 const path = require('path');
 const productsData = require('../database/products.json');
 
@@ -19,10 +19,15 @@ function create(data, callback) {
 
     productsData.push(cube);
 
-    fs.writeFile(
-        path.join(__dirname + '/../database/products.json'), 
-        JSON.stringify(productsData), 
-        callback
+    // fs.writeFile(
+    //     path.join(__dirname + '/../database/products.json'), 
+    //     JSON.stringify(productsData), 
+    //     callback
+    // );
+
+    return fs.writeFile(
+        path.join(__dirname, '../database/products.json'), 
+        JSON.stringify(productsData),
     );
 }
 
