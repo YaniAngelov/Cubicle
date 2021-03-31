@@ -1,1 +1,3 @@
-[{"id":"eaf1rwkmx7c59b","name":"Cube1","description":"Description","imageUrl":"none","level":"1"}]
+[{"id":"eaf2eokmx7ynsg","name":"Rubik Cube","description":"7x7x7","imageUrl":"https://5.imimg.com/data5/KD/NT/MY-6975226/rubik-cube-7x7x7-puzzle-educational-toy-500x500.jpg","level":"4"},
+ {"id":"eaf71ckmx83iuc","name":"Round Rubik's Cube","description":"Some rounded cube","imageUrl":"https://i.pinimg.com/564x/23/be/b1/23beb17ec58e0f81d4c72d693c738600.jpg","level":"3"},
+ {"id":"eaf3g4kmx86bpu","name":"Rubix Pyramid Cube","description":"3X3 Speed Triangle Rubik Pyraminx Puzzle Cube","imageUrl":"https://i.pinimg.com/564x/1b/cb/98/1bcb98dfd3e3feb31e0b69fe020c5148.jpg","level":"2"}]
