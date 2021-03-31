@@ -11,6 +11,11 @@ function setupExpress(app) {
     
     app.use(express.static('public'));
 
+    // Вместо bodyParser, така Express взима информацията от формата и я преобразува разбираемо
+    app.use(express.urlencoded({
+        extended: true
+    }));
+
 }
 
 module.exports = setupExpress;
