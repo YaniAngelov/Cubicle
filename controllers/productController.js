@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const productService = require('../services/productService');
 
 const router = Router();
 
@@ -10,11 +11,12 @@ router.get('/create', (req, res) => {
     res.render('create', { title: 'Create' });
 });
 
-router.post('/create', (req, res) => {
+router.post('/create', (req, res) => {  
+    //TODO Validate imputs
 
-    console.log(req.body);
+    productService.create(req.body);
 
-    res.send('created');
+    res.redirect('/products');
 });
 
 router.get('/details/:productId', (req, res) => {
