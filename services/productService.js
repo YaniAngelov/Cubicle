@@ -18,7 +18,7 @@ function getAll(query) {
     }
 
     if (query.to) {
-        result = result.filter(x => Number(x.level) <= query.to);
+        result = result.filter(x => Number(x.level) <= query.from);
     }
 
     return result;
@@ -43,7 +43,7 @@ function create(data, callback) {
 
     return fs.writeFile(
         path.join(__dirname, '../database/products.json'), 
-        JSON.stringify(productsData),
+        JSON.stringify(productsData)
     );
 }
 
