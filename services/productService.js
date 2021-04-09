@@ -1,10 +1,9 @@
-const uniqid = require('uniqid');
 const Cube = require('../models/Cube');
+const Accessory = require('../models/Accessory');
 const productData = require('../data/productData');
-// const { search } = require('../controllers/productController');
 
-function getAll(query) {
-    let products = productData.getAll();
+async function getAll(query) {
+    let products = await Cube.find({}).lean();
 
     if (query.search) {
         products = products.filter(
@@ -23,23 +22,33 @@ function getAll(query) {
 }
 
 function create(data) {
-    let cube = new Cube(
-        uniqid(), 
-        data.name, 
-        data.description, 
-        data.imageUrl, 
-        data.difficultyLevel
-    );
+    let cube = new Cube(data);
 
-    return productData.create(cube);
+    return cube.save();
 }
 
 function getOne(id) {
-    return productData.getOne(id);
+    return Cube.findById(id).lean();
+}
+
+function getOneWithAccessories(id) {
+    return Cube.findById(id)
+        .populate('accessories')
+            .lean();
+}
+
+async function attachAccessory(productId, accessoryId) {
+    let product = await Cube.findById(productId);
+    let accesory = await Accessory.findById(accessoryId);
+
+    product.accessories.push(accesory);
+    return product.save();
 }
 
 module.exports = {
     create,
     getAll,
-    getOne
+    getOne,
+    getOneWithAccessories,
+    attachAccessory
 }
