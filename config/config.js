@@ -8,7 +8,7 @@ const config = {
     },
     production: {
         PORT: 80,
-        DB_CONNECTION: 'mongodb+srv://YaniAngelov:YaniAngelov@cubicles.wjq1h.mongodb.net/cubicle',
+        DB_CONNECTION: 'Insert MongoDB Atlas connection here!',
         SALT_ROUNDS: 10,
         SECRET: 'supersecret',
         COOKIE_NAME: 'USER_SESSION',                                                                                              
