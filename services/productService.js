@@ -1,6 +1,6 @@
 const Cube = require('../models/Cube');
 const Accessory = require('../models/Accessory');
-const productData = require('../data/productData');
+// const productData = require('../data/productData');
 
 async function getAll(query) {
     let products = await Cube.find({}).lean();
